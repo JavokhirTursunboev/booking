@@ -1,13 +1,27 @@
+import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import {
   faBed,
   faCar,
+  faPerson,
   faPlane,
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import "./header.css";
+import { DateRange } from "react-date-range";
+// date range css
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+
 function Header() {
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: null,
+      key: "selection",
+    },
+  ]);
   return (
     <div className="header">
       <div className="headerContainer ">
@@ -41,6 +55,36 @@ function Header() {
           Search deals on hotels, homes, and much more..
         </p>
         <button className="headerBtn">Sign in / Register</button>
+
+        {/* Search part */}
+        <div className="headerSearch">
+          <div className="headerSearchItem">
+            <FontAwesomeIcon icon={faBed} className="headerIcon" />
+            <input
+              type="text"
+              placeholder="Where are you going?"
+              className="headerSearchInput"
+            />
+          </div>
+          <div className="headerSearchItem">
+            <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+            <span className="headerSearchText">date to date</span>
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => setDate([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={date}
+              className="date"
+            />
+          </div>
+          <div className="headerSearchItem">
+            <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+            <span className="headerSearchText">2 adults 2 children 1 room</span>
+          </div>
+          <div className="headerSearchItem">
+            <button className="searchBtn">Search</button>
+          </div>
+        </div>
       </div>
     </div>
   );
