@@ -44,7 +44,7 @@ function Footer() {
           <li className="fListItem">Terms & conditions</li>
         </ul>
       </div>
-      <div className="fText">Copyright © 2023    ibooking.</div>
+      <div className="fText">Copyright © 2023    iBooking.</div>
     </div>
   );
 }
