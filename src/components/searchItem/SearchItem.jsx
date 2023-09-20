@@ -22,6 +22,7 @@ function SearchItem() {
         <span className="siCancelOpSubtitle">
           You can cancel later, so lock in this great price today!
         </span>
+        <span></span>
       </div>
 
       {/* detail part */}
