@@ -23,11 +23,17 @@
   align-items: center;
   gap: 10px;
 }
-.headerListItem.active {
+.headerListItem:hover {
   border: 1px solid white;
   padding: 10px;
   border-radius: 20px;
 }
+
+/* .headerListItem.active {
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 20px;
+} */
 .headerDesc {
   margin: 20px 0;
 }

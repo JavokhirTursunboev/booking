@@ -94,3 +94,10 @@
   border: none;
   cursor: pointer;
 }
+.searchBtn {
+  padding: 5px 10px;
+  border: none;
+  color: white;
+  background-color: #0071c2;
+  border-radius: 5px;
+}
