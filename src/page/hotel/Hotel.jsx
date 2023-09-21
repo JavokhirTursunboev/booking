@@ -39,6 +39,16 @@ function Hotel() {
     setSlideNumber(i);
     setOpen(true);
   };
+
+  const handleMove = (direction) => {
+    let newSlideNum;
+    if (direction === "l") {
+      newSlideNum = slideNumber === 0 ? 5 : slideNumber - 1;
+    } else {
+      newSlideNum = slideNumber === 5 ? 0 : slideNumber + 1;
+    }
+    setSlideNumber(newSlideNum);
+  };
   return (
     <div>
       <Navbar />
@@ -47,12 +57,24 @@ function Hotel() {
         {/* Slider */}
         {open && (
           <div className="slider">
-            <FontAwesomeIcon icon={faCircleXmark} />
-            <FontAwesomeIcon icon={faCircleArrowLeft} />
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              className="close"
+              onClick={() => setOpen(false)}
+            />
+            <FontAwesomeIcon
+              icon={faCircleArrowLeft}
+              className="arrow"
+              onClick={() => handleMove("l")}
+            />
             <div className="sliderWrapper">
-              <img src={photos[slideNumber].src} alt="" />
+              <img className="sliderImg" src={photos[slideNumber].src} alt="" />
             </div>
-            <FontAwesomeIcon icon={faCircleArrowRight} />
+            <FontAwesomeIcon
+              icon={faCircleArrowRight}
+              className="arrow"
+              onClick={() => handleMove("r")}
+            />
           </div>
         )}
 
