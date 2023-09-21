@@ -19,11 +19,14 @@
   margin-bottom: 50px;
 }
 .headerListItem {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 .headerListItem:hover {
+  transition: all 0.3s ease;
   border: 1px solid white;
   padding: 10px;
   border-radius: 20px;
