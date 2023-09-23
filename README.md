@@ -1,2 +1,2 @@
 this is Practice website for booking
-link: 
+link: https://master--booking-free.netlify.app/
